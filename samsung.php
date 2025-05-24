@@ -1,10 +1,10 @@
 <?php
 include 'koneksiTA.php';
-session_start();
-if(!isset($_SESSION["login"])){
-    header ("Location: loginTA.php");
-    exit;
-}
+// session_start();
+// if(!isset($_SESSION["login"])){
+//     header ("Location: loginTA.php");
+//     exit;
+// }
 $query = mysqli_query($konek, "SELECT * FROM spek WHERE merk = 'SAMSUNG'"); //NGAMBIL DARI TABLE
 
 ?>
@@ -15,45 +15,59 @@ $query = mysqli_query($konek, "SELECT * FROM spek WHERE merk = 'SAMSUNG'"); //NG
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    body {
+      background:url('AssetTA/background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .card-scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 1.5rem;
+      padding-bottom: 1rem;
+      scroll-snap-type: x mandatory;
+    }
+
+    .card-scroll-container::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .card-scroll-container::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 4px;
+    }
+
+    .card {
+      min-width: 300px;
+      flex: 0 0 auto;
+      scroll-snap-align: start;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+      background-color: rgba(0, 0, 0, 0.6); 
+      color: white; 
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+      border-color: #0056b3;
+    }
+
+    .card img {
+      height: 220px;
+      object-fit: cover;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top shadow-sm">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Arahphone</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                       <a class="nav-link active" href="indexTA.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                     <a class="nav-link" href="#">About us</a>
-                         </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="logoutTA.php">Logout</a>
-                    </li>
-                      <li class="nav-item">
-                     <a class="nav-link" href="pemesanan.php">Pemesanan</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" 
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            Merk
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="samsung.php">Samsung</a></li>
-                            <li><a class="dropdown-item" href="xiaomi.php">Xiaomi</a></li>
-                            <li><a class="dropdown-item" href="realme.php">Realme</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <?php include 'navbar.php'; ?>
     <div class="container mt-4">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
+      <h2 class="text-center mb-4">Daftar HP Samsung</h2>
+        <div class="card-scroll-container mt-4">
             <?php while($row = mysqli_fetch_assoc($query)) { ?>
                 <div class="col">
                     <div class="card h-100 shadow-sm">
