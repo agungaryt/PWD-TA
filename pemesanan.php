@@ -15,13 +15,45 @@ $query = mysqli_query($konek, "SELECT * FROM spek"); //NGAMBIL DARI TABLE
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    body {
+        background: url('AssetTA/background.jpg') no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+    }
+    .card {
+        margin-top: 50px;
+        background-color: rgba(19, 39, 55, 0.49);
+        border: none;
+        border-radius: 1rem;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        color: white; 
+    }
+    .card h3 {
+        color: #333;
+    }
+    .form-control, .form-select, .input-group-text {
+        border-radius: 0.5rem;
+    }
+    label {
+        font-weight: 500;
+        color: #333;
+    }
+    .btn-primary {
+        padding: 10px 30px;
+        border-radius: 2rem;
+    }
+</style>
 </head>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <body>
+    <?php include 'navbar.php'; ?>
     <div id="pemesanan" class= "container-fluid">
              <div class="container d-flex justify-content-center align-items-center">
         <div class="card w-50">
             <div class="card-body">
-            <h3 class="text-center mb-4">Form pemesanan</h3>
+            <h3 class="text-center mb-4 text-white">Form pemesanan</h3>
                 <form action="struk.php" method="GET"> 
                     <div class="row g-3"> 
                     <div class="col-6">
