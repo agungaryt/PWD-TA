@@ -48,18 +48,74 @@ if(isset($_POST["login"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login Akun</title>
+    <title>Login Akun</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            height: 100vh;
+            background: linear-gradient(to right,rgba(14, 43, 74, 0.68),rgba(155, 53, 124, 0.69));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .login-box {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-box h1 {
+            margin-bottom: 20px;
+            font-weight: bold;
+            color:rgb(238, 246, 255);
+        }
+
+        .btn-primary {
+            background-color:rgb(4, 49, 163);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color:rgb(68, 110, 207);
+        }
+
+        .form-check-label {
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <form action="" method="POST">
-        <h1>login Akun</h1>
-        <label for="username">username</label>
-        <input type="text" name="username" id=username><br>
-        <label for="password">password</label>
-        <input type="password" name="password" id=password><br>
-        <input type="checkbox" name="remember" id="remember">
-        <label for="remember">remember me</label><br>
-        <input type="submit" value="login" name="login"><br>
-        <p>Belum punya akun? <a href="registerTA.php">Daftar akun di sini</a></p>
+    <form action="" method="POST" class="login-box">
+        <h1 class="text-center">Login Akun</h1>
+        <div class="mb-3">
+            <label for="username" class="form-label" style="color: white;">Username</label>
+            <input type="text" name="username" id="username" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label" style="color: white;">Password</label>
+            <input type="password" name="password" id="password" class="form-control" required>
+        </div>
+        <div class="form-check mb-3">
+            <input type="checkbox" name="remember" id="remember" class="form-check-input">
+            <label for="remember" class="form-check-label" style="color: white;">Remember me</label>
+        </div>
+        <div class="d-grid">
+            <input type="submit" value="Login" name="login" class="btn btn-primary">
+        </div>
+        <p class="mt-3 text-center" style="color: white;">Belum punya akun? <a href="registerTA.php">Daftar di sini</a></p>
+    </form>
 </body>
 </html>
