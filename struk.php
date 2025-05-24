@@ -1,10 +1,10 @@
 <?php
 include 'koneksiTA.php';
-session_start();
-if(!isset($_SESSION["login"])){
-    header ("Location: loginTA.php");
-    exit;
-}
+// session_start();
+// if(!isset($_SESSION["login"])){
+//     header ("Location: loginTA.php");
+//     exit;
+// }
 $nama = $_GET['namaDepan'] . " " . $_GET['namaBelakang'];
 $nohp =  $_GET['nohp'];
 $kode_barang = $_GET['hp'];
@@ -24,6 +24,25 @@ $total_harga = $harga_satuan * $jumlah;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+  body {
+    background: url('AssetTA/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+  }
+
+  .struk {
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 50px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  th {
+    width: 40%;
+  }
+</style>
 </head>
 <body>
     <div class="container col-md-6 struk">
@@ -58,6 +77,9 @@ $total_harga = $harga_satuan * $jumlah;
     <div class="card text-center p-3 mt-3">
         <h5>Terima kasih telah berbelanja di Arahphone!</h5>
     </div> 
+</div>
+<div class="text-center mt-3">
+  <a href="indexTA.php" class="btn btn-outline-light">Kembali ke Beranda</a>
 </div>
 </div>
 </body>
