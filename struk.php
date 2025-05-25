@@ -1,10 +1,10 @@
 <?php
 include 'koneksiTA.php';
-// session_start();
-// if(!isset($_SESSION["login"])){
-//     header ("Location: loginTA.php");
-//     exit;
-// }
+ session_start();
+if(!isset($_SESSION["login"])){
+    header ("Location: loginTA.php");
+   exit;
+ }
 $nama = $_GET['namaDepan'] . " " . $_GET['namaBelakang'];
 $nohp =  $_GET['nohp'];
 $kode_barang = $_GET['hp'];
