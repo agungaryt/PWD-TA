@@ -78,7 +78,7 @@ body {
   </div>
 </div>
 
-<div class="container fluid">
+<div class="container fluid" id="about">
     <h3 class="text-center">About Us</h3>
     <div class="row mt-4 align-items-center">
         <div class="col-md-4">
