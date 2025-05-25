@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link active" href="indexTA.php">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">About us</a></li>
+                <li class="nav-item"><a class="nav-link" href="indexTA.php#about">About us</a></li>
                 <li class="nav-item"><a class="nav-link active" href="logoutTA.php">Logout</a></li>
                 <li class="nav-item"><a class="nav-link" href="pemesanan.php">Pemesanan</a></li>
                 <li class="nav-item dropdown">
