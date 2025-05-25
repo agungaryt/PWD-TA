@@ -1,10 +1,10 @@
 <?php
 include 'koneksiTA.php';
-// session_start();
-// if(!isset($_SESSION["login"])){
-//     header ("Location: loginTA.php");
-//     exit;
-// }
+session_start();
+if(!isset($_SESSION["login"])){
+    header ("Location: loginTA.php");
+    exit;
+}
 $query = mysqli_query($konek, "SELECT * FROM spek WHERE merk = 'REALME'"); //NGAMBIL DARI TABLE
 
 ?>
