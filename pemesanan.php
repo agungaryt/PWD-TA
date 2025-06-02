@@ -85,7 +85,7 @@ $query = mysqli_query($konek, "SELECT * FROM spek"); //NGAMBIL DARI TABLE
                     <br></div>
                     <div class="col-3">
                     jumlah :<br>
-                    <input type="text" name="jumlah" class= "form-control"><br></div>
+                    <input type="text" name="jumlah" class= "form-control"required><br></div>
                     </div>
                     <br>
             
